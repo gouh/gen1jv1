@@ -4,7 +4,7 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>mx.tide</groupId>
+    <groupId>gen1.jv1</groupId>
     <artifactId>Gen1JV1</artifactId>
     <version>1.0-SNAPSHOT</version>
 
