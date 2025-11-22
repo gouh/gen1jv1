@@ -79,21 +79,14 @@ public class LibrarySystem {
         System.out.println("\nUsando forEach con lambda:");
         books.forEach(book -> System.out.println("- " + book.getTitle() + " por " + book.getAuthor()));
 
-        // 8. CLASES SELLADAS - User hierarchy
+        // 8. CLASES SELLADAS
         System.out.println("\n8. USANDO CLASES SELLADAS (User):");
-        Reader reader = new Reader("Juan Pérez", "R001");
+        Reader reader = new Reader("Juan Pérez", "R001", 10);
         Librarian librarian = new Librarian("María García", "L001", "Ciencias");
-        
         List<User> users = List.of(reader, librarian);
-        
         for (User user : users) {
-            System.out.println("Usuario: " + user.getName() + " - Rol: " + user.getRole());
+            processUser(user);
         }
-        
-        // Pattern matching con sealed classes
-        System.out.println("\nPattern matching con sealed classes:");
-        processUser(reader);
-        processUser(librarian);
 
         // 9. RECORD - Libro inmutable
         System.out.println("\n9. USANDO RECORD (BookRecord - Inmutable):");
@@ -125,11 +118,10 @@ public class LibrarySystem {
     }
 
     private static void processUser(User user) {
+        System.out.println("Procesando usuario: " + user.getName() + " - Rol: " + user.getRole());
         switch (user) {
-            case Reader r -> System.out.println("Procesando lector: " + r.getName() + 
-                                               " (Libros prestados: " + r.getBorrowedBooks() + ")");
-            case Librarian l -> System.out.println("Procesando bibliotecario: " + l.getName() + 
-                                                   " (Departamento: " + l.getDepartment() + ")");
+            case Reader r -> System.out.println("Libros prestados: " + r.getBorrowedBooks());
+            case Librarian l -> System.out.println("Departamento: " + l.getDepartment());
         }
     }
 }

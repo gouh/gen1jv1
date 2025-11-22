@@ -9,6 +9,11 @@ public final class Reader extends User {
         this.borrowedBooks = 0;
     }
 
+    public Reader(String name, String id, int borrowedBooks) {
+        super(name, id);
+        this.borrowedBooks = borrowedBooks;
+    }
+
     @Override
     public String getRole() {
         return "Reader";
