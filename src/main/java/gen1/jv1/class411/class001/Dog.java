@@ -1,4 +1,4 @@
-package gen1.jv1.class411.animals;
+package gen1.jv1.class411.class001;
 
 public class Dog extends Animal {
     
